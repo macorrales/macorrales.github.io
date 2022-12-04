@@ -11,13 +11,12 @@ The mission of today is to find overlaps in the assignments of work for pairs of
 
 ## Approach
 
-Each assignment is an interval of sequential tasks. To find whether two assignment overlaps we can use the interval's
-boundaries.
+Each assignment is an interval of sequential tasks. To find whether two assignments overlap we can use the interval's boundaries.
 
 ### Parsing
 
 A pair of assignments is represented as `2-4,6-8` which can be parsed into a `record`. First the string is split by `,`
-into two string representing a range. Then each range is split by `-` into bounds of the range.
+into two strings representing a range. Then each range is split by `-` into bounds of the range.
 
 ````java
 record ElfPairAssignment(int oneElfFrom, int oneElfTo, int anotherElfFrom, int anotherElfTo) {
@@ -92,4 +91,8 @@ System.out.printf("There are %s full overlapping pairs in the file\n",finder.cou
 System.out.printf("There are %s simple overlapping pairs in the file\n",finder.countOverlaps(assignments));
 ```
 
+
+See the full [AoC project][myaoc] 
+
+[myaoc]:https://github.com/macorrales/advent2022
 [challenge]:https://adventofcode.com/2022/day/4
